@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "openbd.ivan.probadvuhurovspisok"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "openbd.ivan.probadvuhurovspisok"
+        minSdk 25
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //noinspection GradleCompatible
+
+    implementation 'com.android.support.constraint:constraint-layout:2.1.3'
+
+    implementation 'com.google.guava:guava:32.1.3-jre'
+
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+
+    implementation 'androidx.appcompat:appcompat:1.6.1' // Единая версия для всех
+    def core_version = "1.8.0"  // Или "1.9.0"
+    implementation "androidx.core:core:$core_version"
+    implementation "androidx.core:core-ktx:$core_version" //    // Совместимая версия
+
+
+}
